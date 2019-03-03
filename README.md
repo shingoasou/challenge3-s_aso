@@ -48,27 +48,27 @@
   * https://qiita.com/kazukimatsumoto/items/a0daa7281a3948701c39  
   
   2. 1.が終了次第、challenge3のCSVデータを使って、①の手順で問題ないことを確認する  
-　* カラムの数と型をチェック  
-　* 2つのCSVを扱うためのMVC作成およびロジック実装  
-　* グラフ描画ライブラリChartkick実装（このライブラリは色々とできて、面白い）  
+  * カラムの数と型をチェック  
+  * 2つのCSVを扱うためのMVC作成およびロジック実装  
+  * グラフ描画ライブラリChartkick実装（このライブラリは色々とできて、面白い）  
 
 　3. リファクタリングとテスト  
-　* データが間違っていないか  
-　* Model：データ（行、列）追加可能で使える状態にする  
-　* View（見栄え）  
-　* 保守性とパフォーマンス（グラフの種類の切り替えの速さ、グラフの数が多くなっても処理が遅くならないかなど）  
+  * データが間違っていないか  
+  * Model：データ（行、列）追加可能で使える状態にする  
+  * View（見栄え）  
+  * 保守性とパフォーマンス（グラフの種類の切り替えの速さ、グラフの数が多くなっても処理が遅くならないかなど）  
 
-　* インデックス  
+  * インデックス  
 　　検索対象になるカラムにはインデックスを加える  
 　　add_index :energies, :year unique: true, name: 'year_index'  
 
-　* csv  
-　 * ファイルがないときの例外処理file.pathのあるなし  
-　 * nil, 空文字、改行などのバリデーション  
-　 * ファイルアップロードの時間を短くする  
+  * csv  
+  * ファイルがないときの例外処理file.pathのあるなし  
+  * nil, 空文字、改行などのバリデーション  
+  * ファイルアップロードの時間を短くする  
 
 　4. Herokuデプロイ  
-　* Herokuにデプロイは成功したが、heroku run rake db:migrate をすると、  
+  * Herokuにデプロイは成功したが、heroku run rake db:migrate をすると、  
   * /app/vendor/bundle/ruby/2.5.0/gems/activesupport-4.2.5/lib/active_support/core_ext/numeric/conversions.rb:131:in `block (2 levels) in <class:Numeric>’
   のエラーが出る。  
   * RubyおよびRailsのバージョンが古い？DBの設定もなんか臭う。環境構築からきちんとしたほうがよさそう。  
