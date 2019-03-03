@@ -3,6 +3,9 @@
 * RubyGems 2.6.11
 * sqlite 3.8.2
 
+![2019-03-03 22 58 03](https://user-images.githubusercontent.com/13845927/53696555-6fa29880-3e0b-11e9-9633-55fd3524b47f.png)
+
+
 ## 課題に対するアプローチ
  ① 機能の整理
  * CSV取り込み、DB登録、集計項目の抽出と可視化
